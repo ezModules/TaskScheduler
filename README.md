@@ -17,3 +17,21 @@ The TaskScheduler module helps you easily manage and run multiple tasks at the s
 - **Task Retry System:** If a task fails, it will retry based on the strategy you’ve set (try again immediately, wait longer each time, or add a random delay).
 - **Throttling:** Some tasks can be "throttled," meaning they can only run after a certain amount of time has passed, which is useful for rate-limiting tasks that shouldn't run too frequently.
 - **Error Handling:** If a task keeps failing after all retries, the TaskScheduler can handle it globally and log the issue.
+
+# Advantages of Using TaskScheduler Module vs Normal Functions
+
+- **Task Prioritization:** TaskScheduler allows you to set task importance (Low, Normal, High), so important tasks get done first. Normal functions don't have this.
+- **Managing Multiple Tasks:** TaskScheduler controls how many tasks run at the same time to prevent your game from slowing down. With normal functions, you'd have to manage this yourself.
+- **Automatic Retries:** If a task fails, TaskScheduler can automatically try again using different retry methods. With normal functions, you'd need to write extra code to do this.
+- **Task Dependencies:** You can make tasks wait for others to finish before running. Normal functions don't handle this easily.
+- **Logging:** TaskScheduler keeps a log of what's happening with each task, making it easier to track and debug. Normal functions don’t automatically log events.
+- **Throttling:** You can limit how often tasks run to prevent overuse, which isn't built into normal functions.
+- **Task Grouping:** You can organize tasks into groups for better management. Normal functions can't do this without extra work.
+  
+# Disadvantages of Using TaskScheduler Module vs Normal Functions
+
+- **More Code:** TaskScheduler adds extra steps and code, which might be unnecessary for simple tasks.
+- **Complex Setup:** It can be harder to set up TaskScheduler compared to just using normal functions for basic tasks.
+- **Learning Required:** You need to learn how to use TaskScheduler properly, while normal functions are easier to understand and use.
+- **Uses More Memory:** TaskScheduler keeps track of tasks and logs, so it can use more memory than running simple functions.
+- **Overkill for Simple Tasks:** For very basic actions, using TaskScheduler might be more complicated than just using a normal function.
